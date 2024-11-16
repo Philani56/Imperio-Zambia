@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperio Zambia | Vehicles</title>
+    <!-- Link to Google Fonts for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Link to Helvetica Neue font (as a fallback) -->
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            background-color: #f8f8f8; 
+            padding-top: 80px; /* Adjusted to match the navbar height */
+        }
+
+        /* Header Section with Gradient and Background Image */
+header {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/pexel.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensure the background image covers the entire section */
+    background-position: center; /* Center the background image */
+    height: 500px; /* Set the height of the header */
+    color: #fff; /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px; /* Space from the left for the text */
+    text-align: left;
+    position: relative;
+}
+
+/* Header Title and Subtitle */
+header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+header p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Discover Now Button (Styled Like BMW's) */
+.discover-btn {
+    padding: 12px 50px;
+    background-color: black; /* White background for the button */
+    color: white; /* Black text color */
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 190px; /* Rounded corners (BMW-style) */
+    border: 10px solid black; /* Thin border around the button */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+    font-family: "Open Sans", sans-serif;
+}
+
+.discover-btn:hover {
+    background-color: white; /* On hover, make the button background white */
+    color: black; /* Change the text color to black on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    header {
+        height: 400px; /* Reduce header height for medium screens */
+        padding-left: 30px; /* Reduce padding for medium screens */
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Reduce font size of the title */
+    }
+
+    header p {
+        font-size: 1.1rem; /* Reduce font size of the subtitle */
+    }
+
+    .discover-btn {
+        padding: 10px 40px; /* Reduce button padding */
+        font-size: 1.1rem; /* Reduce button font size */
+        border-radius: 150px; /* Slightly reduce border radius */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 350px; /* Reduce header height further for smaller screens */
+        padding-left: 20px; /* Further reduce padding */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Further reduce font size of the title */
+    }
+
+    header p {
+        font-size: 1rem; /* Further reduce font size of the subtitle */
+    }
+
+    .discover-btn {
+        padding: 10px 30px; /* Further reduce button padding */
+        font-size: 1rem; /* Further reduce button font size */
+        border-radius: 120px; /* More rounded corners */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 300px; /* Reduce header height for very small screens */
+        padding-left: 15px; /* Further reduce padding */
+        text-align: center; /* Center text on very small screens */
+        justify-content: center; /* Center content vertically */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Further reduce font size of the title */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Further reduce font size of the subtitle */
+    }
+
+    .discover-btn {
+        padding: 8px 25px; /* Reduce button padding */
+        font-size: 1rem; /* Set button font size to 1rem */
+        border-radius: 100px; /* Even more rounded corners */
+    }
+}
+
+
+
+/* Navbar Styling */
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    width: 100%;
+    font-family: "Lato", sans-serif;
+}
+
+/* Logo Section */
+.navbar .logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Navigation Links (Default for Larger Screens) */
+.navbar .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Hidden Navigation Links for Mobile */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .navbar .nav-links.active {
+        max-height: 300px; /* Adjust based on content */
+        padding: 1rem 0;
+    }
+}
+
+/* Nav Links */
+.navbar .nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effects for Links */
+.navbar .nav-links a:hover {
+    color: gray;
+}
+
+.navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: gray;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Burger Menu */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; /* Ensure it stays above nav links */
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+/* Toggle to X */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+}
+
+
+
+        /* Featured Section Styling */
+.featured-section {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.featured-section h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: "Lato", sans-serif;
+}
+
+.featured-section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Featured Vehicles Grid */
+.featured-vehicles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Vehicle Card Styling */
+.vehicle-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin: 10px;
+}
+
+.vehicle-card:hover {
+    transform: scale(1.05);
+}
+
+.vehicle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.vehicle-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.vehicle-info h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.vehicle-info p {
+    font-size: 1em;
+    color: #666;
+    margin: 10px 0;
+}
+
+.vehicle-price {
+    font-size: 1.3em;
+    color: #ff5722;
+    font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .vehicle-card {
+        width: 45%; /* Adjust to 2 cards per row */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .vehicle-card {
+        width: 100%; /* Stack vehicle cards on smaller screens */
+    }
+
+    .featured-section h2 {
+        font-size: 2em; /* Adjust heading font size */
+    }
+
+    .featured-section p {
+        font-size: 1em; /* Adjust paragraph font size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .vehicle-card {
+        width: 100%; /* Stack vehicle cards on very small screens */
+        margin: 10px 0; /* Reduce margin */
+    }
+
+    .featured-section h2 {
+        font-size: 1.8em; /* Further reduce heading font size */
+    }
+
+    .featured-section p {
+        font-size: 0.9em; /* Reduce paragraph font size for very small screens */
+    }
+}
+
+
+/* About Us Section Styles */
+.about-us-section {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6) ), url('img/background4.jpg') no-repeat center center/cover;
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.about-us-section .about-us-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about-us-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: "Lato", sans-serif;
+}
+
+.about-us-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-find-more {
+    font-size: 18px;
+    padding: 10px 25px;
+    background-color: black; /* Accent color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-find-more:hover {
+    background-color: #333; /* Darker shade of primary color */
+}
+
+/* About Us Section Styles */
+.about-us-section {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6) ), url('img/background4.jpg') no-repeat center center/cover;
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    background-size: cover; /* Ensure the background image covers the entire section */
+    background-position: center center; /* Center the background image */
+    background-attachment: fixed; /* Keep background fixed during scroll for a nice effect */
+}
+
+/* Adjust background behavior for smaller screens */
+@media screen and (max-width: 768px) {
+    .about-us-section {
+        padding: 60px 0; /* Reduce padding on smaller screens */
+        background-attachment: scroll; /* Disable fixed background on smaller screens for better performance */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-us-section {
+        padding: 40px 0; /* Further reduce padding for very small screens */
+        background-size: auto 100%; /* Make sure the background image scales appropriately */
+    }
+}
+
+
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .about-us-section {
+        padding: 60px 0; /* Reduce padding on smaller screens */
+    }
+
+    .about-us-section .about-us-content {
+        max-width: 90%; /* Allow content to be more flexible on smaller screens */
+        padding: 15px; /* Slightly reduce padding */
+    }
+
+    .about-us-section h2 {
+        font-size: 28px; /* Reduce font size for the heading */
+    }
+
+    .about-us-section p {
+        font-size: 16px; /* Adjust font size for better readability */
+        margin-bottom: 20px;
+    }
+
+    .btn-find-more {
+        font-size: 16px; /* Adjust button font size */
+        padding: 8px 20px; /* Adjust padding on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-us-section {
+        padding: 40px 0; /* Further reduce padding for very small screens */
+    }
+
+    .about-us-section .about-us-content {
+        max-width: 95%; /* Make content almost full width on very small screens */
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .about-us-section h2 {
+        font-size: 22px; /* Further reduce heading font size */
+        margin-bottom: 15px;
+    }
+
+    .about-us-section p {
+        font-size: 14px; /* Further adjust font size for small screens */
+        margin-bottom: 15px;
+    }
+
+    .btn-find-more {
+        font-size: 14px; /* Further reduce button text size */
+        padding: 6px 15px; /* Adjust padding for very small screens */
+    }
+}
+
+
+
+/* ------------------------------------------------------------------- */
+
+/* Accredited Partners Section Styles */
+.accredited-partners-section {
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.accredited-partners-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: black;
+    font-family: "Lato", sans-serif;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.partner-logo {
+    max-width: 150px; /* Limit size for logos */
+    max-height: 80px;
+    margin: 0 20px;
+    filter: none; /* Ensure logos are displayed with their original colors */
+}
+
+/* Line Under the Heading */
+.heading-line {
+    width: 100px; /* Length of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: grey; /* Line color */
+    margin: 0 auto 40px; /* Center the line and add spacing below */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .accredited-partners-section h2 {
+        font-size: 28px; /* Reduce font size for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .partners-logos {
+        gap: 20px; /* Reduce gap between logos on smaller screens */
+    }
+
+    .partner-logo {
+        max-width: 120px; /* Resize logos for smaller screens */
+        max-height: 60px;
+    }
+
+    .heading-line {
+        width: 80px; /* Reduce line width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .accredited-partners-section {
+        padding: 60px 0; /* Reduce padding for very small screens */
+    }
+
+    .accredited-partners-section h2 {
+        font-size: 24px; /* Further reduce font size on very small screens */
+        margin-bottom: 15px;
+    }
+
+    .partners-logos {
+        gap: 10px; /* Reduce the gap even more for very small screens */
+    }
+
+    .partner-logo {
+        max-width: 100px; /* Further resize logos for small devices */
+        max-height: 50px;
+    }
+
+    .heading-line {
+        width: 60px; /* Further reduce line width */
+    }
+}
+
+
+
+/* ------------------------------------------------------------------- */
+
+/* Footer Section Styles */
+.footer-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/footer.jpg') no-repeat center center/cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    padding: 40px 0;
+}
+
+/* Footer Navigation Links */
+.footer-nav {
+    margin-top: 20px;
+}
+
+.footer-nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-direction: row; /* Ensure links are in a horizontal row */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav-links li {
+    display: inline-block; /* Makes each list item inline, avoiding vertical stacking */
+}
+
+.footer-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-nav-links a:hover {
+    color: gray; /* Accent color for hover effect */
+}
+
+/* Footer Container Styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Turns image white */
+}
+
+/* Footer Left and Right */
+.footer-left, .footer-right {
+    flex: 1;
+    margin: 0 10px;
+    text-align: left;
+}
+
+.footer-left h3, .footer-right h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.footer-left p, .footer-right p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+}
+
+.footer-right .fa {
+    margin-right: 5px;
+    vertical-align: middle;
+    color: white;
+}
+
+/* Footer Emails */
+.footer-emails {
+    font-size: 14px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between email links */
+}
+
+.footer-emails .email-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-emails .email-link:hover {
+    color: gray; /* Accent color for hover effect */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    /* Adjust footer container for smaller screens */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Align footer-left and footer-right properly for small screens */
+    .footer-left, .footer-right {
+        margin-bottom: 20px;
+        text-align: center;
+        flex: 100%;
+    }
+
+    /* Adjust footer-emails font size */
+    .footer-emails {
+        font-size: 13px;
+        flex-direction: column; /* Stack email links vertically on small screens */
+        text-align: center;
+    }
+
+    .footer-nav-links {
+        flex-direction: column; /* Stack nav links vertically on smaller screens */
+    }
+
+    .footer-logo {
+        width: 100px; /* Smaller logo for mobile */
+        margin-bottom: 15px;
+    }
+
+    /* Footer bottom adjustments */
+    .footer-bottom {
+        padding: 15px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small devices */
+    .footer-left h3, .footer-right h3 {
+        font-size: 16px;
+    }
+
+    .footer-left p, .footer-right p {
+        font-size: 13px;
+    }
+
+    .footer-nav-links a {
+        font-size: 14px; /* Adjust link font size for very small screens */
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Gradient Background and Button -->
+    <header>
+        <h1>Welcome to Imperio Zambia</h1>
+        <p>Your Trusted Automotive Partner.</p>
+        <a href="services.html" class="discover-btn">Discover now</a>
+    </header>
+
+<!-- Navbar Section -->
+<div class="navbar">
+    <!-- Logo Section -->
+    <a href="#" class="logo">
+        <img src="img/logo.png" alt="Imperio Automotive Logo">
+    </a>
+
+    <!-- Burger Menu Icon -->
+    <div class="menu-icon" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+        <a href="Index.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+
+
+
+   <!-- Featured Vehicles Section -->
+<section class="featured-section">
+    <h2>Featured Vehicles.</h2>
+    <div class="heading-line"></div> <!-- Line below the heading -->
+    <line/>
+    <p>Explore our selection of premium and luxury vehicles, designed to elevate your driving experience.</p>
+    <div class="featured-vehicles">
+        <!-- Vehicle Card 1 -->
+        <div class="vehicle-card">
+            <img src="img/range-rover-velar.jpg" alt="Range Rover Velar SUV in a scenic location">
+            <div class="vehicle-info">
+                <h3>Range Rover</h3>
+                <p>Luxury SUV with refined style and off-road capability.</p>
+                
+            </div>
+        </div>
+        <!-- Vehicle Card 2 -->
+        <div class="vehicle-card">
+            <img src="img/mercedes-s-class.jpg" alt="Mercedes-Benz S-Class sedan on the road">
+            <div class="vehicle-info">
+                <h3>Mercedes-Benz</h3>
+                <p>Iconic sedan with unparalleled luxury and cutting-edge technology.</p>
+                
+            </div>
+        </div>
+        <!-- Vehicle Card 3 -->
+        <div class="vehicle-card">
+            <img src="img/vehicle1.jpg" alt="Porsche 911 sports car on a scenic drive">
+            <div class="vehicle-info">
+                <h3>BMW</h3>
+                <p>Combines performance with a premium feel, ideal for versatile use.</p>
+                
+            </div>
+        </div>
+        <div class="vehicle-card">
+            <img src="img/ford.jpg" alt="Porsche 911 sports car on a scenic drive">
+            <div class="vehicle-info">
+                <h3>Ford</h3>
+                <p>Known for its reliability and ruggedness, perfect for everyday adventures.</p>
+            </div>
+        </div>
+        <div class="vehicle-card">
+            <img src="img/pexel.jpg" alt="Porsche 911 sports car on a scenic drive">
+            <div class="vehicle-info">
+                <h3>Toyota</h3>
+                <p>A leader in durability and efficiency, designed to go the extra mile.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about-us-section">
+    <div class="about-us-content">
+        <h2>About</h2>
+        <div class="heading-line"></div> <!-- Line below the heading -->
+        <p>At Imperio Automotive, we are dedicated to providing an exceptional automotive experience. With a focus on luxury, performance, and customer satisfaction, we bring you the finest selection of new and pre-owned vehicles.</p>
+        <a href="About.html" class="btn-find-more">Find out more</a>
+    </div>
+</section>
+
+<!-- Accredited Partners Section -->
+<section class="accredited-partners-section">
+    <h2>Our Accredited Partners.</h2>
+    <div class="heading-line"></div> <!-- Line below the heading -->
+    <div class="partners-logos">
+        <img src="img/assets/logo1.png" alt="FNB" class="partner-logo">
+        <img src="img/assets/logo2.png" alt="MTN" class="partner-logo">
+        <img src="img/assets/logo3.png" alt="Prudential" class="partner-logo">
+        <img src="img/assets/logo5.png" alt="Stanbic" class="partner-logo">
+        <img src="img/assets/logo6.png" alt="Absa" class="partner-logo">
+        <img src="img/assets/logo4.png" alt="Zanoco" class="partner-logo">
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-left">
+            <!-- White Logo Image -->
+            <img src="img/logo.png" alt="Imperio Automotive Logo" class="footer-logo">
+            
+            <!-- Footer Navigation Links -->
+            <nav class="footer-nav">
+                <ul class="footer-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-right">
+            <h3>Explore these car sites</h3>
+            <p>
+                <a href="https://www.autotrader.co.za" target="_blank" style="text-decoration: none; color: inherit;">
+                    <i class="fa fa-car" aria-hidden="true"></i> AutoTrader
+                </a> | 
+                <a href="https://www.cars.co.za" target="_blank" style="text-decoration: none; color: inherit;">
+                    <i class="fa fa-cogs" aria-hidden="true"></i> Cars
+                </a>
+                
+                </a>
+                
+            </p>
+            <br>
+            <h3>Contact Us</h3>
+            <p class="footer-emails">
+                <a href="mailto:edwinmuneku@imperiozambia.com" class="email-link">
+                    <i class="fa fa-envelope" aria-hidden="true"></i> edwinmuneku@imperiozambia.com
+                </a>
+                |
+                <a href="mailto:samuelkalinda@imperiozambia.com" class="email-link">
+                    <i class="fa fa-envelope" aria-hidden="true"></i> samuelkalinda@imperiozambia.com
+                </a>
+            </p>            
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Imperio Automotive. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+
+<script>
+    function toggleNav() {
+    const navLinks = document.querySelector('.nav-links');
+    const menuIcon = document.querySelector('.menu-icon');
+    navLinks.classList.toggle('active');
+    menuIcon.classList.toggle('active'); // Toggle the X icon
+}
+
+
+
+</script>
+
+
+</body>
+</html>
