@@ -478,6 +478,7 @@
     padding: 30px;
     font-family: 'Lato', sans-serif;
     text-align: left;
+    
     margin: 0 auto; /* Center the form container */
 }
 
@@ -491,6 +492,7 @@
 form {
     display: flex;
     flex-direction: column;
+    color: #757575;
 }
 
 .form-group {
@@ -509,7 +511,7 @@ form {
 .form-group select {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid gray;
     border-radius: 5px;
     font-size: 0.9rem;
 }
@@ -614,7 +616,7 @@ form {
 <section class="contact-form-section">
     <div class="form-container">
         <p><strong>Please fill in the form below and we’ll get back to you as soon as possible.</strong></p>
-        <form action="#" method="post">
+        <form id="contactForm" action="https://formspree.io/f/xanybyvo" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -625,7 +627,7 @@ form {
             </div>
             <div class="form-group">
                 <label for="subject">Subject</label>
-                <select id="subject" name="subject">
+                <select id="subject" name="subject" required>
                     <option value="">Select</option>
                     <option value="vehicle_financing">Vehicle Financing Backed Purchases</option>
                     <option value="corporate_purchases">Corporate Purchases</option>
@@ -640,6 +642,11 @@ form {
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
+
+        <!-- Success message -->
+        <div id="successMessage" style="display:none; color: white; background-color: green; padding: 10px; margin-top: 10px;">
+            Thank you! Your message has been sent.
+        </div>
     </div>
 
     <!-- Map Section -->
@@ -707,7 +714,33 @@ form {
     menuIcon.classList.toggle('active'); // Toggle the X icon
 }
 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
 
+        const form = event.target; // Get the form element
+        const formData = new FormData(form); // Collect form data
+
+        // Send the form data to Formspree
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show the success message
+                document.getElementById('successMessage').style.display = 'block';
+                form.reset(); // Clear the form fields
+            } else {
+                alert('Oops! Something went wrong. Please try again.');
+            }
+        })
+        .catch(() => {
+            alert('Oops! There was a problem submitting the form.');
+        });
+    });
 
 </script>
 
