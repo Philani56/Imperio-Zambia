@@ -53,7 +53,7 @@ header {
 header h1 {
     font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -64,6 +64,7 @@ header p {
     margin-bottom: 20px;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
+    margin-top: -1px;
     font-style: italic; 
 }
 
@@ -86,40 +87,21 @@ header p {
 }
 
 /* Responsive Adjustments */
-@media screen and (max-width: 1024px) {
-    header {
-        height: 400px; /* Reduce header height for medium screens */
-        padding-left: 30px; /* Reduce padding for medium screens */
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* Reduce font size of the title */
-    }
-
-    header p {
-        font-size: 1.1rem; /* Reduce font size of the subtitle */
-    }
-
-    .discover-btn {
-        padding: 10px 40px; /* Reduce button padding */
-        font-size: 1.1rem; /* Reduce button font size */
-        border-radius: 150px; /* Slightly reduce border radius */
-    }
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) { 
     header {
         height: 350px; /* Reduce header height further for smaller screens */
         padding-left: 20px; /* Further reduce padding */
-    }
+    } 
 
     header h1 {
         font-size: 2rem; /* Further reduce font size of the title */
-    }
+        margin-bottom: 0; /* Remove bottom margin */
+    } 
 
     header p {
         font-size: 1rem; /* Further reduce font size of the subtitle */
-    }
+        margin-top: 0; /* Remove top margin */
+    } 
 
     .discover-btn {
         padding: 10px 30px; /* Further reduce button padding */
@@ -127,6 +109,31 @@ header p {
         border-radius: 120px; /* More rounded corners */
     }
 }
+
+
+@media screen and (max-width: 768px) { 
+    header {
+        height: 350px; /* Reduce header height further for smaller screens */
+        padding-left: 20px; /* Further reduce padding */
+    } 
+
+    header h1 {
+        font-size: 2rem; /* Further reduce font size of the title */
+        margin-bottom: 0; /* Remove bottom margin */
+    } 
+
+    header p {
+        font-size: 1rem; /* Further reduce font size of the subtitle */
+        margin-top: 0; /* Remove top margin */
+    } 
+
+    .discover-btn {
+        padding: 10px 30px; /* Further reduce button padding */
+        font-size: 1rem; /* Further reduce button font size */
+        border-radius: 120px; /* More rounded corners */
+    }
+}
+
 
 @media screen and (max-width: 480px) {
     header {
@@ -807,7 +814,6 @@ header p {
     <!-- Header Section with Gradient Background and Button -->
     <header>
         <h1>Welcome to Imperio Zambia</h1>
-        <br/>
         <p>Drive Your Dream</p>
         <a href="services.html" class="discover-btn">Discover now</a>
     </header>
