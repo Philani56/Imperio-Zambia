@@ -216,21 +216,22 @@ header p {
 
 /* Hover Effects for Links */
 .navbar .nav-links a:hover {
-    color: gray;
+    color: white;
+    background: black;
+    border-radius: 15px; /* Adjust the curve as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
-.navbar .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: gray;
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-in-out;
+/* Click Effect for Links */
+.navbar .nav-links a:active {
+    background: black;
+    color: white; /* Optional: Change text color on click */
+    border-radius: 15px;
+    padding: 5px 10px; /* Ensure consistency with hover */
 }
+
+
 
 .navbar .nav-links a:hover::after {
     transform: scaleX(1);
@@ -272,13 +273,22 @@ header p {
         display: flex;
     }
 
-    .navbar .nav-links {
-        display: none;
-    }
+    /* Hover Effects for Links */
+.navbar .nav-links a:hover {
+    color: white;
+    background: black;
+    border-radius: 15px; /* Adjust the curve as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition */
+}
 
-    .navbar .nav-links.active {
-        display: flex;
-    }
+/* Click Effect for Links */
+.navbar .nav-links a:active {
+    background: black;
+    color: white; /* Optional: Change text color on click */
+    border-radius: 15px;
+    padding: 5px 10px; /* Ensure consistency with hover */
+}
 }
     
 
@@ -341,14 +351,14 @@ header p {
     filter: brightness(0) invert(1); /* Turns image white */
 }
 
-/* Footer Left and Right */
-.footer-left, .footer-right {
+/* Footer Left, Right, and Contact */
+.footer-left, .footer-right, .footer-contact {
     flex: 1;
     margin: 0 10px;
     text-align: left;
 }
 
-.footer-left h3, .footer-right h3 {
+.footer-left h3, .footer-right h3, .footer-contact h3 {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
@@ -356,16 +366,31 @@ header p {
     letter-spacing: 1px;
 }
 
-.footer-left p, .footer-right p {
+.footer-left p, .footer-right p, .footer-contact p {
     font-size: 14px;
     line-height: 1.6;
     color: white;
 }
 
-.footer-right .fa {
-    margin-right: 5px;
-    vertical-align: middle;
+.footer-contact {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
     color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-contact a:hover {
+    color: gray; /* Accent color for hover effect */
 }
 
 /* Footer Emails */
@@ -411,8 +436,8 @@ header p {
         align-items: center;
     }
 
-    /* Align footer-left and footer-right properly for small screens */
-    .footer-left, .footer-right {
+    /* Align footer-left, footer-right, and footer-contact properly for small screens */
+    .footer-left, .footer-right, .footer-contact {
         margin-bottom: 20px;
         text-align: center;
         flex: 100%;
@@ -443,11 +468,11 @@ header p {
 
 @media screen and (max-width: 480px) {
     /* Further adjustments for very small devices */
-    .footer-left h3, .footer-right h3 {
+    .footer-left h3, .footer-right h3, .footer-contact h3 {
         font-size: 16px;
     }
 
-    .footer-left p, .footer-right p {
+    .footer-left p, .footer-right p, .footer-contact p {
         font-size: 13px;
     }
 
@@ -455,6 +480,7 @@ header p {
         font-size: 14px; /* Adjust link font size for very small screens */
     }
 }
+
 
 /* New Section Styling */
 .imperio-section {
@@ -648,7 +674,7 @@ header p {
           <!-- Navbar Section -->
 <div class="navbar">
     <!-- Logo Section -->
-    <a href="#" class="logo">
+    <a href="Index.html" class="logo">
         <img src="img/logo.png" alt="Imperio Automotive Logo">
     </a>
 
@@ -662,9 +688,9 @@ header p {
     <!-- Navigation Links -->
     <nav class="nav-links">
         <a href="Index.html">Home</a>
-        <a href="About.html">About Us</a>
+        <a href="About.html">About us</a>
         <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Contact us</a>
     </nav>
 </div>
 
@@ -712,22 +738,30 @@ header p {
     </section>
     
     
-<!-- Footer Section -->
-<footer class="footer-section">
-    <div class="footer-container">
-        <div class="footer-left">
-            <!-- White Logo Image -->
-            <img src="img/logo.png" alt="Imperio Automotive Logo" class="footer-logo">
-            
-            <!-- Footer Navigation Links -->
-            
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-left">
+                <!-- White Logo Image -->
+                <img src="img/logo.png" alt="Imperio Automotive Logo" class="footer-logo">
+                
+                <!-- Footer Navigation Links (if any) -->
+            </div>
+            <div class="footer-contact">
+                <p>
+                    <strong>Imperio Investment Ltd <br> </strong>
+                    Stand No. 848, <br>
+                    Cnr of Lagos & Addis Adaba Rd, <br>
+                    Lusaka - Zambia <br>
+                    <br/>
+                    Phone: +260 972 220 060 | +270 977 775 599 <br>
+                    Email: <a href="mailto:info@imperiozambia.co.za">info@imperiozambia.co.za</a>
+                </p>
+            </div>
         </div>
-
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 Imperio Automotive. All Rights Reserved.</p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Imperio Automotive. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 
 <script>

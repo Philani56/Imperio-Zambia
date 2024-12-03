@@ -216,21 +216,22 @@
 
 /* Hover Effects for Links */
 .navbar .nav-links a:hover {
-    color: gray;
+    color: white;
+    background: black;
+    border-radius: 15px; /* Adjust the curve as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
-.navbar .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: gray;
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-in-out;
+/* Click Effect for Links */
+.navbar .nav-links a:active {
+    background: black;
+    color: white; /* Optional: Change text color on click */
+    border-radius: 15px;
+    padding: 5px 10px; /* Ensure consistency with hover */
 }
+
+
 
 .navbar .nav-links a:hover::after {
     transform: scaleX(1);
@@ -272,189 +273,213 @@
         display: flex;
     }
 
-    .navbar .nav-links {
-        display: none;
-    }
+    /* Hover Effects for Links */
+.navbar .nav-links a:hover {
+    color: white;
+    background: black;
+    border-radius: 15px; /* Adjust the curve as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition */
+}
 
-    .navbar .nav-links.active {
-        display: flex;
-    }
+/* Click Effect for Links */
+.navbar .nav-links a:active {
+    background: black;
+    color: white; /* Optional: Change text color on click */
+    border-radius: 15px;
+    padding: 5px 10px; /* Ensure consistency with hover */
+}
 }
     
     
     /* ------------------------------------------------------------------- */
     
     /* Footer Section Styles */
-    .footer-section {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/footer.jpg') no-repeat center center/cover;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        font-family: "Lato", sans-serif;
-        padding: 40px 0;
-    }
-    
-    /* Footer Navigation Links */
-    .footer-nav {
-        margin-top: 20px;
-    }
-    
-    .footer-nav-links {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        gap: 15px;
-        flex-direction: row; /* Ensure links are in a horizontal row */
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .footer-nav-links li {
-        display: inline-block; /* Makes each list item inline, avoiding vertical stacking */
-    }
-    
-    .footer-nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease-in-out;
-    }
-    
-    .footer-nav-links a:hover {
-        color: gray; /* Accent color for hover effect */
-    }
-    
-    /* Footer Container Styles */
+.footer-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/footer.jpg') no-repeat center center/cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    padding: 40px 0;
+}
+
+/* Footer Navigation Links */
+.footer-nav {
+    margin-top: 20px;
+}
+
+.footer-nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-direction: row; /* Ensure links are in a horizontal row */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav-links li {
+    display: inline-block; /* Makes each list item inline, avoiding vertical stacking */
+}
+
+.footer-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-nav-links a:hover {
+    color: gray; /* Accent color for hover effect */
+}
+
+/* Footer Container Styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Turns image white */
+}
+
+/* Footer Left, Right, and Contact */
+.footer-left, .footer-right, .footer-contact {
+    flex: 1;
+    margin: 0 10px;
+    text-align: left;
+}
+
+.footer-left h3, .footer-right h3, .footer-contact h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.footer-left p, .footer-right p, .footer-contact p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+}
+
+.footer-contact {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-contact a:hover {
+    color: gray; /* Accent color for hover effect */
+}
+
+/* Footer Emails */
+.footer-emails {
+    font-size: 14px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between email links */
+}
+
+.footer-emails .email-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-emails .email-link:hover {
+    color: gray; /* Accent color for hover effect */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    /* Adjust footer container for smaller screens */
     .footer-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .footer-logo {
-        width: 120px;
+
+    /* Align footer-left, footer-right, and footer-contact properly for small screens */
+    .footer-left, .footer-right, .footer-contact {
         margin-bottom: 20px;
-        filter: brightness(0) invert(1); /* Turns image white */
+        text-align: center;
+        flex: 100%;
     }
-    
-    /* Footer Left and Right */
-    .footer-left, .footer-right {
-        flex: 1;
-        margin: 0 10px;
-        text-align: left;
-    }
-    
-    .footer-left h3, .footer-right h3 {
-        margin-top: 20px;
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 8px;
-        letter-spacing: 1px;
-    }
-    
-    .footer-left p, .footer-right p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: white;
-    }
-    
-    .footer-right .fa {
-        margin-right: 5px;
-        vertical-align: middle;
-        color: white;
-    }
-    
-    /* Footer Emails */
+
+    /* Adjust footer-emails font size */
     .footer-emails {
-        font-size: 14px;
-        margin-top: 8px;
-        display: flex;
-        align-items: center;
-        gap: 10px; /* Space between email links */
-    }
-    
-    .footer-emails .email-link {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        display: inline-flex; /* Align icon and text horizontally */
-        align-items: center;
-        gap: 5px; /* Space between icon and text */
-        transition: color 0.3s ease-in-out;
-    }
-    
-    .footer-emails .email-link:hover {
-        color: gray; /* Accent color for hover effect */
-    }
-    
-    /* Footer Bottom */
-    .footer-bottom {
-        margin-top: 20px;
-        padding: 20px;
         font-size: 13px;
-        color: #bbb;
+        flex-direction: column; /* Stack email links vertically on small screens */
+        text-align: center;
     }
-    
-    .footer-bottom p {
-        margin: 0;
+
+    .footer-nav-links {
+        flex-direction: column; /* Stack nav links vertically on smaller screens */
     }
-    
-    /* Responsive Adjustments */
-    @media screen and (max-width: 768px) {
-        /* Adjust footer container for smaller screens */
-        .footer-container {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        /* Align footer-left and footer-right properly for small screens */
-        .footer-left, .footer-right {
-            margin-bottom: 20px;
-            text-align: center;
-            flex: 100%;
-        }
-    
-        /* Adjust footer-emails font size */
-        .footer-emails {
-            font-size: 13px;
-            flex-direction: column; /* Stack email links vertically on small screens */
-            text-align: center;
-        }
-    
-        .footer-nav-links {
-            flex-direction: column; /* Stack nav links vertically on smaller screens */
-        }
-    
-        .footer-logo {
-            width: 100px; /* Smaller logo for mobile */
-            margin-bottom: 15px;
-        }
-    
-        /* Footer bottom adjustments */
-        .footer-bottom {
-            padding: 15px;
-            font-size: 12px;
-        }
+
+    .footer-logo {
+        width: 100px; /* Smaller logo for mobile */
+        margin-bottom: 15px;
     }
-    
-    @media screen and (max-width: 480px) {
-        /* Further adjustments for very small devices */
-        .footer-left h3, .footer-right h3 {
-            font-size: 16px;
-        }
-    
-        .footer-left p, .footer-right p {
-            font-size: 13px;
-        }
-    
-        .footer-nav-links a {
-            font-size: 14px; /* Adjust link font size for very small screens */
-        }
+
+    /* Footer bottom adjustments */
+    .footer-bottom {
+        padding: 15px;
+        font-size: 12px;
     }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small devices */
+    .footer-left h3, .footer-right h3, .footer-contact h3 {
+        font-size: 16px;
+    }
+
+    .footer-left p, .footer-right p, .footer-contact p {
+        font-size: 13px;
+    }
+
+    .footer-nav-links a {
+        font-size: 14px; /* Adjust link font size for very small screens */
+    }
+}
 
     .heading-line {
         width: 100px; /* Length of the line */
@@ -592,7 +617,7 @@ form {
        <!-- Navbar Section -->
 <div class="navbar">
     <!-- Logo Section -->
-    <a href="#" class="logo">
+    <a href="Index.html" class="logo">
         <img src="img/logo.png" alt="Imperio Automotive Logo">
     </a>
 
@@ -606,9 +631,9 @@ form {
     <!-- Navigation Links -->
     <nav class="nav-links">
         <a href="Index.html">Home</a>
-        <a href="About.html">About Us</a>
+        <a href="About.html">About us</a>
         <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Contact us</a>
     </nav>
 </div>
     
@@ -664,15 +689,25 @@ form {
             <!-- White Logo Image -->
             <img src="img/logo.png" alt="Imperio Automotive Logo" class="footer-logo">
             
-            <!-- Footer Navigation Links -->
-            
+            <!-- Footer Navigation Links (if any) -->
         </div>
-        
+        <div class="footer-contact">
+            <p>
+                <strong>Imperio Investment Ltd <br> </strong>
+                Stand No. 848, <br>
+                Cnr of Lagos & Addis Adaba Rd, <br>
+                Lusaka - Zambia <br>
+                <br/>
+                Phone: +260 972 220 060 | +270 977 775 599 <br>
+                Email: <a href="mailto:info@imperiozambia.co.za">info@imperiozambia.co.za</a>
+            </p>
+        </div>
     </div>
     <div class="footer-bottom">
         <p>&copy; 2024 Imperio Automotive. All Rights Reserved.</p>
     </div>
 </footer>
+
 
 <script>
     function toggleNav() {

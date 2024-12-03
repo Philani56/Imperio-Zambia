@@ -30,61 +30,76 @@
             padding-top: 80px; /* Adjusted to match the navbar height */
         }
 
-        /* Header Section with Gradient and Background Image */
+/* Header Section with Gradient and Background Image */
 header {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('img/pexel1.jpg'); /* Replace with your image path */
+    background: 
+    radial-gradient(
+        circle, 
+        rgba(0, 0, 0, 0.4) 60%, /* Softer dark center */
+        rgba(0, 0, 0, 0.6) 100% /* Less intense darker edges */
+    ),
+    linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.2) 50%, /* Lighter transparent black */
+        rgba(255, 255, 255, 0.7) 100% /* Softer white at the bottom */
+    ),
+    url('img/100.jpg');
+ /* Replace with your image path */
     background-size: cover; /* Ensure the background image covers the entire section */
     background-position: center; /* Center the background image */
     height: 500px; /* Set the height of the header */
-    color: #fff; /* White text color */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center-align text */
     padding-left: 50px; /* Space from the left for the text */
     position: relative;
-
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center-align text */
 }
 
-/* Header Title and Subtitle */
-header h1 {
+.heading-container {
+    display: flex;
+    flex-direction: column; /* Stack lines vertically */
+    gap: 10px; /* Space between lines */
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.900rem;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Align h1 and p properly */
+    gap: 5px; /* Adjust spacing between elements */
+    color: white;
+}
+
+.line h1 {
+    margin: 0;
     font-size: 3rem;
-    font-weight: 600;
-    
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    font-weight: bold;
 }
 
-header p {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    margin-top: -1px;
-    font-style: normal; 
+.line p {
+    margin: 0;
+    font-size: 3rem;
 }
+
+
 
 /* Discover Now Button (Styled Like BMW's) */
 .discover-btn {
     padding: 12px 50px;
     background-color: black; /* White background for the button */
     color: white; /* Black text color */
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
-    border-radius: 190px; /* Rounded corners (BMW-style) */
-    border: 10px solid black; /* Thin border around the button */
+    border-radius: 90px; /* Rounded corners (BMW-style) */
+    border: 1px solid black; /* Thin border around the button */
     transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
     font-family: "Open Sans", sans-serif;
 }
 
-.discover-btn:hover {
-    background-color: white; /* On hover, make the button background white */
-    color: black; /* Change the text color to black on hover */
-}
+
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) { 
@@ -94,7 +109,7 @@ header p {
     } 
 
     header h1 {
-        font-size: 2rem; /* Further reduce font size of the title */
+        font-size: 1rem; /* Further reduce font size of the title */
         margin-bottom: 0; /* Remove bottom margin */
     } 
 
@@ -104,10 +119,22 @@ header p {
     } 
 
     .discover-btn {
-        padding: 10px 30px; /* Further reduce button padding */
-        font-size: 1rem; /* Further reduce button font size */
-        border-radius: 120px; /* More rounded corners */
-    }
+    padding: 10px 30px; /* Further reduce button padding */
+    font-size: 1rem; /* Further reduce button font size */
+    border-radius: 120px; /* More rounded corners */
+    display: inline-block; /* Ensure the button respects the parent alignment */
+    margin: 0 auto; /* Center in a block-level container */
+    text-align: center;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional, full viewport height */
+    text-align: center; /* Fallback for older browsers */
+}
+
 }
 
 
@@ -117,20 +144,11 @@ header p {
         padding-left: 20px; /* Further reduce padding */
     } 
 
-    header h1 {
-        font-size: 2rem; /* Further reduce font size of the title */
-        margin-bottom: 0; /* Remove bottom margin */
-    } 
-
-    header p {
-        font-size: 1rem; /* Further reduce font size of the subtitle */
-        margin-top: 0; /* Remove top margin */
-    } 
 
     .discover-btn {
         padding: 10px 30px; /* Further reduce button padding */
         font-size: 1rem; /* Further reduce button font size */
-        border-radius: 120px; /* More rounded corners */
+        border-radius: 110px; /* More rounded corners */
     }
 }
 
@@ -147,7 +165,7 @@ header p {
     }
 
     header h1 {
-        font-size: 1.5rem; /* Further reduce font size of the title */
+        font-size: 1rem; /* Further reduce font size of the title */
         margin-top: 10px; /* Add some margin from the top edge */
     }
 
@@ -158,7 +176,7 @@ header p {
     .discover-btn {
         position: absolute; /* Position the button absolutely within its container */
         bottom: 10px; /* Distance from the bottom edge */
-        right: 10px; /* Distance from the right edge */
+       
         padding: 8px 25px; /* Reduce button padding */
         font-size: 1rem; /* Set button font size to 1rem */
         border-radius: 100px; /* Even more rounded corners */
@@ -171,7 +189,6 @@ header p {
 
 
 
-/* Navbar Styling */
 /* Navbar Styling */
 .navbar {
     display: flex;
@@ -235,21 +252,22 @@ header p {
 
 /* Hover Effects for Links */
 .navbar .nav-links a:hover {
-    color: gray;
+    color: white;
+    background: black;
+    border-radius: 15px; /* Adjust the curve as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
-.navbar .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: gray;
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-in-out;
+/* Click Effect for Links */
+.navbar .nav-links a:active {
+    background: black;
+    color: white; /* Optional: Change text color on click */
+    border-radius: 15px;
+    padding: 5px 10px; /* Ensure consistency with hover */
 }
+
+
 
 .navbar .nav-links a:hover::after {
     transform: scaleX(1);
@@ -291,13 +309,22 @@ header p {
         display: flex;
     }
 
-    .navbar .nav-links {
-        display: none;
-    }
+    /* Hover Effects for Links */
+.navbar .nav-links a:hover {
+    color: white;
+    background: black;
+    border-radius: 15px; /* Adjust the curve as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition */
+}
 
-    .navbar .nav-links.active {
-        display: flex;
-    }
+/* Click Effect for Links */
+.navbar .nav-links a:active {
+    background: black;
+    color: white; /* Optional: Change text color on click */
+    border-radius: 15px;
+    padding: 5px 10px; /* Ensure consistency with hover */
+}
 }
 
 
@@ -318,9 +345,10 @@ header p {
 }
 
 .featured-section p {
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1em;
+    color: black;
     margin-bottom: 40px;
+    font-family: "Lato", sans-serif;
 }
 
 /* Featured Vehicles Grid */
@@ -414,30 +442,34 @@ header p {
 
 /* About Us Section Styles */
 .about-us-section {
-    position: relative;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6) ), url('img/background4.jpg') no-repeat center center/cover;
-    padding: 80px 0;
-    color: white;
-    text-align: center;
+    background-color: white; /* Remove gradient background and set to white */
+    padding: 80px 20px;
     font-family: "Open Sans", sans-serif;
 }
 
-.about-us-section .about-us-content {
-    position: relative;
-    max-width: 800px;
+.about-us-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
+    gap: 20px; /* Adds spacing between content and image */
 }
 
-.about-us-section h2 {
+.about-us-content {
+    flex: 1; /* Content takes up equal space */
+    color: #212121; /* Adjust text color for white background */
+    text-align: left; /* Align text to the left */
+}
+
+.about-us-content h2 {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
     font-family: "Lato", sans-serif;
 }
 
-.about-us-section p {
+.about-us-content p {
     font-size: 18px;
     margin-bottom: 30px;
     line-height: 1.6;
@@ -454,34 +486,33 @@ header p {
 }
 
 .btn-find-more:hover {
-    background-color: #333; /* Darker shade of primary color */
+    background-color: black;
 }
 
-/* About Us Section Styles */
-.about-us-section {
-    position: relative;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6) ), url('img/background4.jpg') no-repeat center center/cover;
-    padding: 80px 0;
-    color: white;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    background-size: cover; /* Ensure the background image covers the entire section */
-    background-position: center center; /* Center the background image */
-    background-attachment: fixed; /* Keep background fixed during scroll for a nice effect */
+.about-us-image {
+    flex: 1; /* Image takes up equal space */
+    text-align: right; /* Align image to the right */
 }
 
-/* Adjust background behavior for smaller screens */
+.about-us-image img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-    .about-us-section {
-        padding: 60px 0; /* Reduce padding on smaller screens */
-        background-attachment: scroll; /* Disable fixed background on smaller screens for better performance */
+    .about-us-container {
+        flex-direction: column; /* Stack content and image */
+        text-align: center; /* Center-align text for smaller screens */
     }
-}
 
-@media screen and (max-width: 480px) {
-    .about-us-section {
-        padding: 40px 0; /* Further reduce padding for very small screens */
-        background-size: auto 100%; /* Make sure the background image scales appropriately */
+    .about-us-content {
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .about-us-image {
+        text-align: center; /* Center image */
     }
 }
 
@@ -572,7 +603,7 @@ header p {
     max-width: 350px; /* Limit size for logos */
     max-height: 80px;
     margin: 0 20px;
-    filter: none; /* Ensure logos are displayed with their original colors */
+    filter: grayscale(100%) brightness(0);
 }
 
 /* Line Under the Heading */
@@ -580,6 +611,14 @@ header p {
     width: 100px; /* Length of the line */
     height: 2px; /* Thickness of the line */
     background-color: grey; /* Line color */
+    margin: 0 auto 40px; /* Center the line and add spacing below */
+}
+
+/* Line Under the Heading */
+.heading-line3 {
+    width: 100px; /* Length of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Line color */
     margin: 0 auto 40px; /* Center the line and add spacing below */
 }
 
@@ -592,11 +631,13 @@ header p {
 
     .partners-logos {
         gap: 20px; /* Reduce gap between logos on smaller screens */
+        filter: grayscale(100%) brightness(0);
     }
 
     .partner-logo {
         max-width: 120px; /* Resize logos for smaller screens */
         max-height: 60px;
+        filter: grayscale(100%) brightness(0);
     }
 
     .heading-line {
@@ -616,6 +657,7 @@ header p {
 
     .partners-logos {
         gap: 10px; /* Reduce the gap even more for very small screens */
+        filter: grayscale(100%) brightness(0);
     }
 
     .partner-logo {
@@ -689,14 +731,14 @@ header p {
     filter: brightness(0) invert(1); /* Turns image white */
 }
 
-/* Footer Left and Right */
-.footer-left, .footer-right {
+/* Footer Left, Right, and Contact */
+.footer-left, .footer-right, .footer-contact {
     flex: 1;
     margin: 0 10px;
     text-align: left;
 }
 
-.footer-left h3, .footer-right h3 {
+.footer-left h3, .footer-right h3, .footer-contact h3 {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
@@ -704,16 +746,31 @@ header p {
     letter-spacing: 1px;
 }
 
-.footer-left p, .footer-right p {
+.footer-left p, .footer-right p, .footer-contact p {
     font-size: 14px;
     line-height: 1.6;
     color: white;
 }
 
-.footer-right .fa {
-    margin-right: 5px;
-    vertical-align: middle;
+.footer-contact {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
     color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-contact a:hover {
+    color: gray; /* Accent color for hover effect */
 }
 
 /* Footer Emails */
@@ -759,8 +816,8 @@ header p {
         align-items: center;
     }
 
-    /* Align footer-left and footer-right properly for small screens */
-    .footer-left, .footer-right {
+    /* Align footer-left, footer-right, and footer-contact properly for small screens */
+    .footer-left, .footer-right, .footer-contact {
         margin-bottom: 20px;
         text-align: center;
         flex: 100%;
@@ -791,11 +848,11 @@ header p {
 
 @media screen and (max-width: 480px) {
     /* Further adjustments for very small devices */
-    .footer-left h3, .footer-right h3 {
+    .footer-left h3, .footer-right h3, .footer-contact h3 {
         font-size: 16px;
     }
 
-    .footer-left p, .footer-right p {
+    .footer-left p, .footer-right p, .footer-contact p {
         font-size: 13px;
     }
 
@@ -805,23 +862,103 @@ header p {
 }
 
 
+.heading-container {
+    display: inline-block;
+}
+
+.heading-container .line h1 {
+    font-size: 3rem; /* Adjust for large screens */
+    margin: 0;
+}
+
+.heading-container .line p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.heading-line3 {
+    background-color: white; /* Default line color */
+    margin: 20px 0;
+}
+
+
+/* Styles for Small Screens */
+@media (max-width: 768px) {
+    header {
+        text-align: left; /* Align to the left */
+        padding: 20px 10px; /* Add padding for smaller screens */
+    }
+
+    .heading-container {
+        text-align: left; /* Align content inside the container */
+    }
+
+    .heading-container .line h1 {
+        font-size: 2rem; /* Smaller text size */
+    }
+
+    .heading-container .line p {
+        font-size: 1rem;
+    }
+
+    .heading-line3 {
+        background-color: #fff; /* Change the line color to white */
+    }
+
+    .discover-btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 5px;
+    }
+
+    .heading-container .line h1 {
+        font-size: 1.5rem; /* Even smaller for very small devices */
+    }
+
+    .heading-container .line p {
+        font-size: 0.9rem;
+    }
+
+    .discover-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
 
 
     </style>
 </head>
 <body>
 
-    <!-- Header Section with Gradient Background and Button -->
-    <header>
-        <h1>Welcome to Imperio Zambia</h1>
-        <p>Drive Your Dream</p>
-        <a href="services.html" class="discover-btn">Discover now</a>
-    </header>
+<!-- Header Section with Gradient Background and Button -->
+<!-- Header Section with Gradient Background and Button -->
+<header>
+    <div class="heading-container">
+        <div class="line">
+            <h1><span class="bold">Driven</span></h1>
+            <p>to</p>
+        </div>
+        <div class="line">
+            <h1><span class="bold">Deliver</span></h1>
+            <p>Excellence</p>
+        </div>
+    </div>
+    <div class="heading-line3"></div>
+    <a href="services.html" class="discover-btn">Discover More.</a>
+</header>
+
+
 
 <!-- Navbar Section -->
 <div class="navbar">
     <!-- Logo Section -->
-    <a href="#" class="logo">
+    <a href="Index.html" class="logo">
         <img src="img/logo.png" alt="Imperio Automotive Logo">
     </a>
 
@@ -835,118 +972,90 @@ header p {
     <!-- Navigation Links -->
     <nav class="nav-links">
         <a href="Index.html">Home</a>
-        <a href="About.html">About Us</a>
+        <a href="About.html">About us</a>
         <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Contact us</a>
     </nav>
 </div>
 
-
-
 <!-- Featured Vehicles Section -->
 <section class="featured-section">
-    <h2>Featured Vehicles.</h2>
-    <div class="heading-line"></div> <!-- Line below the heading -->
-    <p>Discover a selection of Premium and Utility vehicles, designed to elevate your experience.</p>
+    <p> Imperio facilitates vehicle purchases by sourcing cars directly fron trusted platforms like Cars.co.za
+    and AutoTader.co.za. Once customers identify their desired vehicle, Imperio handles the logistics
+        of procurement, importation, and delivery to Zambia,
+        ensuring a smooth and reliable experiene. </p>
+    <p>This process allows customers to access a wide selection of quality vehicles while relying on Imperio for expert assistance in acquiring them.</p>
     
     <!-- Explore Links -->
     <h2>Explore.</h2>
-    <div class="heading-line"></div> <!-- Line below the heading -->
+    <br/>
     <p>
-        <a href="https://www.autotrader.co.za" target="_blank" style="text-decoration: none; color: black;">
-            <i class="fa fa-car" aria-hidden="true"></i> AutoTrader
-        </a> | 
-        <a href="https://www.cars.co.za" target="_blank" style="text-decoration: none; color: black;">
-            <i class="fa fa-cogs" aria-hidden="true"></i> Cars
+        <a href="https://www.autotrader.co.za" target="_blank">
+            <img src="img/logo1.png" alt="AutoTrader Logo" style="filter: grayscale(100%) brightness(0); width: 250px; height: auto;"> 
+        </a>  
+        <a href="https://www.cars.co.za" target="_blank">
+            <img src="img/logo2.png" alt="Cars Logo" style="filter: grayscale(100%) brightness(0); width: 250px; height: auto;">
         </a>
+        
     </p>
+    
 
-    <!-- Featured Vehicles -->
-    <div class="featured-vehicles">
-        <!-- Vehicle Card 1 -->
-        <div class="vehicle-card">
-            <img src="img/range-rover-velar.jpg" alt="Range Rover Velar SUV in a scenic location">
-            <div class="vehicle-info">
-                <h3>Range Rover</h3>
-                <p>Luxury SUV with refined style and off-road capability.</p>
-            </div>
-        </div>
-        <!-- Vehicle Card 2 -->
-        <div class="vehicle-card">
-            <img src="img/mercedes-s-class.jpg" alt="Mercedes-Benz S-Class sedan on the road">
-            <div class="vehicle-info">
-                <h3>Mercedes-Benz</h3>
-                <p>Iconic sedan with unparalleled luxury and cutting-edge technology.</p>
-            </div>
-        </div>
-        <!-- Vehicle Card 3 -->
-        <div class="vehicle-card">
-            <img src="img/vehicle1.jpg" alt="Porsche 911 sports car on a scenic drive">
-            <div class="vehicle-info">
-                <h3>BMW</h3>
-                <p>Combines performance with a premium feel, ideal for versatile use.</p>
-            </div>
-        </div>
-        <!-- Vehicle Card 4 -->
-        <div class="vehicle-card">
-            <img src="img/ford.jpg" alt="Ford vehicle">
-            <div class="vehicle-info">
-                <h3>Ford</h3>
-                <p>Known for its reliability and ruggedness, perfect for everyday adventures.</p>
-            </div>
-        </div>
-        <!-- Vehicle Card 5 -->
-        <div class="vehicle-card">
-            <img src="img/pexel.jpg" alt="Toyota vehicle">
-            <div class="vehicle-info">
-                <h3>Toyota</h3>
-                <p>A leader in durability and efficiency, designed to go the extra mile.</p>
-            </div>
-        </div>
-    </div>
 </section>
 
 
-<!-- About Us Section -->
 <section class="about-us-section">
-    <div class="about-us-content">
-        <h2>About</h2>
-        <div class="heading-line"></div> <!-- Line below the heading -->
-        <p>At Imperio Automotive, we are dedicated to providing an exceptional automotive experience. With a focus on luxury, performance, and customer satisfaction, we bring you the finest selection of new and pre-owned vehicles.</p>
-        <a href="About.html" class="btn-find-more">Find out more</a>
+    <div class="about-us-container">
+        <div class="about-us-content">
+            <h2>About.</h2>
+           
+            <p>At Imperio Automotive, we are dedicated to providing an exceptional automotive experience. With a focus on luxury, performance, and customer satisfaction, we bring you the finest selection of new and pre-owned vehicles.</p>
+            <a href="About.html" class="btn-find-more">Find out more</a>
+        </div>
+        <div class="about-us-image">
+            <img src="img/background4.jpg" alt="About Us Image">
+        </div>
     </div>
 </section>
+
 
 <!-- Accredited Partners Section -->
 <section class="accredited-partners-section">
     <h2>Our Accredited Partners.</h2>
-    <div class="heading-line"></div> <!-- Line below the heading -->
     <div class="partners-logos">
         <img src="img/assets/logo4.png" alt="FNB" class="partner-logo">
         <img src="img/assets/logo2.png" alt="MTN" class="partner-logo">
         <img src="img/assets/logo3.png" alt="Prudential" class="partner-logo">
-        <img src="img/assets/logo5.png" alt="Stanbic" class="partner-logo">
+        <img src="img/assets/logo20.png" alt="Stanbic" class="partner-logo">
         <img src="img/assets/logo6.png" alt="Absa" class="partner-logo">
-        <img src="img/assets/logo1.png" alt="Zanoco" class="partner-logo">
+        <img src="img/assets/logo30.png" alt="Zanoco" class="partner-logo">
     </div>
 </section>
 
-<!-- Footer Section -->
 <footer class="footer-section">
     <div class="footer-container">
         <div class="footer-left">
             <!-- White Logo Image -->
             <img src="img/logo.png" alt="Imperio Automotive Logo" class="footer-logo">
             
-            <!-- Footer Navigation Links -->
-            
+            <!-- Footer Navigation Links (if any) -->
         </div>
-        
+        <div class="footer-contact">
+            <p>
+                <strong>Imperio Investment Ltd <br> </strong>
+                Stand No. 848, <br>
+                Cnr of Lagos & Addis Adaba Rd, <br>
+                Lusaka - Zambia <br>
+                <br/>
+                Phone: +260 972 220 060 | +270 977 775 599 <br>
+                Email: <a href="mailto:info@imperiozambia.co.za">info@imperiozambia.co.za</a>
+            </p>
+        </div>
     </div>
     <div class="footer-bottom">
         <p>&copy; 2024 Imperio Automotive. All Rights Reserved.</p>
     </div>
 </footer>
+
 
 
 
